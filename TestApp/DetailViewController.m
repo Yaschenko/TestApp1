@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  DetailViewController.m
 //  TestApp
 //
 //  Created by Yurii on 3/29/16.
 //  Copyright © 2016 Nostris. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
-@interface ViewController : UIViewController
-
+@implementation DetailViewController
 
 @end
-

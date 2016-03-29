@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		5AE52CD61CAAB6C40010D15A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52CD51CAAB6C40010D15A /* main.m */; };
 		5AE52CD91CAAB6C40010D15A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52CD81CAAB6C40010D15A /* AppDelegate.m */; };
-		5AE52CDC1CAAB6C40010D15A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52CDB1CAAB6C40010D15A /* ViewController.m */; };
+		5AE52CDC1CAAB6C40010D15A /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52CDB1CAAB6C40010D15A /* ListViewController.m */; };
 		5AE52CDF1CAAB6C40010D15A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE52CDD1CAAB6C40010D15A /* Main.storyboard */; };
 		5AE52CE21CAAB6C40010D15A /* TestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52CE01CAAB6C40010D15A /* TestApp.xcdatamodeld */; };
 		5AE52CE41CAAB6C40010D15A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE52CE31CAAB6C40010D15A /* Assets.xcassets */; };
 		5AE52CE71CAAB6C40010D15A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE52CE51CAAB6C40010D15A /* LaunchScreen.storyboard */; };
 		5AE52CF21CAAB6C50010D15A /* TestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52CF11CAAB6C50010D15A /* TestAppTests.m */; };
 		5AE52CFD1CAAB6C50010D15A /* TestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52CFC1CAAB6C50010D15A /* TestAppUITests.m */; };
+		5AE52D0C1CAAB7600010D15A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D0B1CAAB7600010D15A /* DetailViewController.m */; };
+		5AE52D0F1CAAB8CD0010D15A /* NetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D0E1CAAB8CD0010D15A /* NetworkModel.m */; };
+		5AE52D141CAAC4EB0010D15A /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D111CAAC4EB0010D15A /* Item+CoreDataProperties.m */; };
+		5AE52D151CAAC4EB0010D15A /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D131CAAC4EB0010D15A /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +44,8 @@
 		5AE52CD51CAAB6C40010D15A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AE52CD71CAAB6C40010D15A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AE52CD81CAAB6C40010D15A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5AE52CDA1CAAB6C40010D15A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5AE52CDB1CAAB6C40010D15A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5AE52CDA1CAAB6C40010D15A /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		5AE52CDB1CAAB6C40010D15A /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		5AE52CDE1CAAB6C40010D15A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AE52CE11CAAB6C40010D15A /* TestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestApp.xcdatamodel; sourceTree = "<group>"; };
 		5AE52CE31CAAB6C40010D15A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 		5AE52CF81CAAB6C50010D15A /* TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE52CFC1CAAB6C50010D15A /* TestAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAppUITests.m; sourceTree = "<group>"; };
 		5AE52CFE1CAAB6C50010D15A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AE52D0A1CAAB7600010D15A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5AE52D0B1CAAB7600010D15A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		5AE52D0D1CAAB8CD0010D15A /* NetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModel.h; sourceTree = "<group>"; };
+		5AE52D0E1CAAB8CD0010D15A /* NetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModel.m; sourceTree = "<group>"; };
+		5AE52D101CAAC4EB0010D15A /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5AE52D111CAAC4EB0010D15A /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5AE52D121CAAC4EB0010D15A /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		5AE52D131CAAC4EB0010D15A /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +117,22 @@
 			children = (
 				5AE52CD71CAAB6C40010D15A /* AppDelegate.h */,
 				5AE52CD81CAAB6C40010D15A /* AppDelegate.m */,
-				5AE52CDA1CAAB6C40010D15A /* ViewController.h */,
-				5AE52CDB1CAAB6C40010D15A /* ViewController.m */,
+				5AE52CDA1CAAB6C40010D15A /* ListViewController.h */,
+				5AE52CDB1CAAB6C40010D15A /* ListViewController.m */,
+				5AE52D0D1CAAB8CD0010D15A /* NetworkModel.h */,
+				5AE52D0E1CAAB8CD0010D15A /* NetworkModel.m */,
+				5AE52D0A1CAAB7600010D15A /* DetailViewController.h */,
+				5AE52D0B1CAAB7600010D15A /* DetailViewController.m */,
 				5AE52CDD1CAAB6C40010D15A /* Main.storyboard */,
 				5AE52CE31CAAB6C40010D15A /* Assets.xcassets */,
 				5AE52CE51CAAB6C40010D15A /* LaunchScreen.storyboard */,
 				5AE52CE81CAAB6C40010D15A /* Info.plist */,
 				5AE52CE01CAAB6C40010D15A /* TestApp.xcdatamodeld */,
 				5AE52CD41CAAB6C40010D15A /* Supporting Files */,
+				5AE52D101CAAC4EB0010D15A /* Item+CoreDataProperties.h */,
+				5AE52D111CAAC4EB0010D15A /* Item+CoreDataProperties.m */,
+				5AE52D121CAAC4EB0010D15A /* Item.h */,
+				5AE52D131CAAC4EB0010D15A /* Item.m */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -273,7 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AE52CDC1CAAB6C40010D15A /* ViewController.m in Sources */,
+				5AE52D151CAAC4EB0010D15A /* Item.m in Sources */,
+				5AE52D0C1CAAB7600010D15A /* DetailViewController.m in Sources */,
+				5AE52D141CAAC4EB0010D15A /* Item+CoreDataProperties.m in Sources */,
+				5AE52CDC1CAAB6C40010D15A /* ListViewController.m in Sources */,
+				5AE52D0F1CAAB8CD0010D15A /* NetworkModel.m in Sources */,
 				5AE52CE21CAAB6C40010D15A /* TestApp.xcdatamodeld in Sources */,
 				5AE52CD91CAAB6C40010D15A /* AppDelegate.m in Sources */,
 				5AE52CD61CAAB6C40010D15A /* main.m in Sources */,
@@ -420,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ee.nostris.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ee.nostris.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
