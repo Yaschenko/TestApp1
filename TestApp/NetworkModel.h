@@ -13,4 +13,5 @@ typedef void(^NetworkModelCallback)(BOOL status, id result);
 @interface NetworkModel : NSObject
 +(instancetype)shareIntance;
 -(void)getDataFromUrl:(NSURL*)url callback:(NetworkModelCallback)callback;
+-(void)downloadImage:(NSURL *)url callback:(NetworkModelCallback)callback;
 @end

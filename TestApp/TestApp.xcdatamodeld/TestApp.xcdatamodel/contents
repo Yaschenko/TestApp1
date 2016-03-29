@@ -3,11 +3,11 @@
     <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="author_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date_taken" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_taken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="descriptionHTML" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="media" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>

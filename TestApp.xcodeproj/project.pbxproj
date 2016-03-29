@@ -20,6 +20,8 @@
 		5AE52D0F1CAAB8CD0010D15A /* NetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D0E1CAAB8CD0010D15A /* NetworkModel.m */; };
 		5AE52D141CAAC4EB0010D15A /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D111CAAC4EB0010D15A /* Item+CoreDataProperties.m */; };
 		5AE52D151CAAC4EB0010D15A /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D131CAAC4EB0010D15A /* Item.m */; };
+		5AE52D181CAADFA50010D15A /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D171CAADFA50010D15A /* DataModel.m */; };
+		5AE52D1B1CAAFA300010D15A /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE52D1A1CAAFA300010D15A /* ItemTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		5AE52D111CAAC4EB0010D15A /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5AE52D121CAAC4EB0010D15A /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		5AE52D131CAAC4EB0010D15A /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		5AE52D161CAADFA50010D15A /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		5AE52D171CAADFA50010D15A /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		5AE52D191CAAFA300010D15A /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
+		5AE52D1A1CAAFA300010D15A /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,10 @@
 				5AE52CD81CAAB6C40010D15A /* AppDelegate.m */,
 				5AE52CDA1CAAB6C40010D15A /* ListViewController.h */,
 				5AE52CDB1CAAB6C40010D15A /* ListViewController.m */,
+				5AE52D191CAAFA300010D15A /* ItemTableViewCell.h */,
+				5AE52D1A1CAAFA300010D15A /* ItemTableViewCell.m */,
+				5AE52D161CAADFA50010D15A /* DataModel.h */,
+				5AE52D171CAADFA50010D15A /* DataModel.m */,
 				5AE52D0D1CAAB8CD0010D15A /* NetworkModel.h */,
 				5AE52D0E1CAAB8CD0010D15A /* NetworkModel.m */,
 				5AE52D0A1CAAB7600010D15A /* DetailViewController.h */,
@@ -295,6 +305,8 @@
 			files = (
 				5AE52D151CAAC4EB0010D15A /* Item.m in Sources */,
 				5AE52D0C1CAAB7600010D15A /* DetailViewController.m in Sources */,
+				5AE52D1B1CAAFA300010D15A /* ItemTableViewCell.m in Sources */,
+				5AE52D181CAADFA50010D15A /* DataModel.m in Sources */,
 				5AE52D141CAAC4EB0010D15A /* Item+CoreDataProperties.m in Sources */,
 				5AE52CDC1CAAB6C40010D15A /* ListViewController.m in Sources */,
 				5AE52D0F1CAAB8CD0010D15A /* NetworkModel.m in Sources */,

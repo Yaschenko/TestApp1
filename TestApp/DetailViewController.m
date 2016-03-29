@@ -7,7 +7,15 @@
 //
 
 #import "DetailViewController.h"
+#import "Item.h"
 
+@interface DetailViewController()
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
+@end
 @implementation DetailViewController
-
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.title = self.item.title;
+    [self.webView loadHTMLString:self.item.descriptionHTML baseURL:nil];
+}
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Item;
 @interface DetailViewController : UIViewController
-
+@property (nonatomic, strong) Item *item;
 @end

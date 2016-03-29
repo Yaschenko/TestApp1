@@ -11,11 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class Item;
-typedef void(^CreateItemCallback)(Item *item);
+typedef void(^CreateItemsCallback)(NSArray *data);
 @interface Item : NSManagedObject
 
-+(void)addItemFormDictionary:(NSDictionary *)json callback:(CreateItemCallback)callback;
-
++(Item *)addItemFormDictionary:(NSDictionary *)json inContext:(NSManagedObjectContext*)context;
++(void)addItemsFromArray:(NSArray *)array callback:(CreateItemsCallback)callback;
 @end
 
 NS_ASSUME_NONNULL_END

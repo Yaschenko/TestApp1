@@ -18,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *title;
 @property (nullable, nonatomic, retain) NSString *link;
 @property (nullable, nonatomic, retain) NSString *media;
-@property (nullable, nonatomic, retain) NSDate *date_taken;
+@property (nullable, nonatomic, retain) NSString *date_taken;
 @property (nullable, nonatomic, retain) NSString *descriptionHTML;
-@property (nullable, nonatomic, retain) NSDate *published;
+@property (nullable, nonatomic, retain) NSString *published;
 @property (nullable, nonatomic, retain) NSString *author;
 @property (nullable, nonatomic, retain) NSString *author_id;
 @property (nullable, nonatomic, retain) NSString *tags;

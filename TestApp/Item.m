@@ -21,14 +21,38 @@
     self.author_id = [json valueForKey:@"author_id"];
     self.tags = [json valueForKey:@"tags"];
 }
-+(void)addItemFormDictionary:(NSDictionary *)json callback:(nonnull CreateItemCallback)callback{
++(Item *)addItemFormDictionary:(NSDictionary *)json inContext:(NSManagedObjectContext*)context {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    request.predicate = [NSPredicate predicateWithFormat:@"link like %@", [json valueForKey:@"link"]];
+    NSArray *array = [context executeFetchRequest:request error:nil];
+    for (Item *i in array) {
+        [context deleteObject:i];
+    }
+    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:context];
+    [item setValuesFromDictionary:json];
+    return item;
+}
++(void)addItemsFromArray:(NSArray *)array callback:(CreateItemsCallback)callback {
     NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate backgroundContext];
     [context performBlock:^{
-        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:context];
-        [item setValuesFromDictionary:json];
-        [context save:nil];
-        callback(item);
+        NSMutableArray *arr = [NSMutableArray new];
+        for (NSDictionary *obj in array) {
+            Item *item = [Item addItemFormDictionary:obj inContext:context];
+            [arr addObject:item];
+        }
+        if (![context save:nil]) {
+            callback([NSArray new]);
+            return ;
+        }
+        NSManagedObjectContext *mainContext = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
+        [mainContext performBlock:^{
+            NSMutableArray *result = [NSMutableArray new];
+            for (NSManagedObject *obj in arr) {
+                [result addObject:[mainContext objectWithID:obj.objectID]];
+            }
+            
+            callback(result);
+        }];
     }];
 }
-
 @end
