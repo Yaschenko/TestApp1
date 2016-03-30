@@ -11,16 +11,16 @@
 #import "NetworkModel.h"
 #import "Item.h"
 
-NSString * const kContentUrl = @"http://www.flickr.com/services/feeds/photos_public.gne?tags=soccer&format=json&jsoncallback=?";
+NSString * const kContentUrl = @"http://api.flickr.com/services/feeds/photos_public.gne?tags=soccer&format=json&nojsoncallback=1";
 
 @implementation DataModel
 -(void)getCashedDataWithCallback:(NetworkModelCallback)callback {
-    NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate backgroundContext];
+    __weak NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate backgroundContext];
     [context performBlock:^{
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
         request.fetchLimit = 20;
         NSArray *array = [context executeFetchRequest:request error:nil];
-        NSManagedObjectContext *mainContext = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
+        __weak NSManagedObjectContext *mainContext = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
         if (!array || array.count == 0) {
             callback(NO, nil);
             return ;
@@ -36,13 +36,17 @@ NSString * const kContentUrl = @"http://www.flickr.com/services/feeds/photos_pub
 }
 -(void)parseData:(NSData*)data callback:(NetworkModelCallback)callback {
     NSError *error = nil;
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSString *nStr = [[str stringByReplacingOccurrencesOfString:@"({" withString:@"{"] stringByReplacingOccurrencesOfString:@"})" withString:@"}"];
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[nStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&error];
+    NSString *str = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    str = [str stringByReplacingOccurrencesOfString:@"\\'" withString:@""];
+    
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&error];
+    
     if (error && !json) {
         callback(NO, error);
         return;
     }
+    
+    
     NSArray *array = [json valueForKey:@"items"];
     if (!array || (array.count == 0)) {
         callback(NO, nil);
@@ -54,11 +58,12 @@ NSString * const kContentUrl = @"http://www.flickr.com/services/feeds/photos_pub
     }];
 }
 -(void)loadDataFromNetwork:(NetworkModelCallback)callback {
+    __weak DataModel *weakSelf = self;
     [[NetworkModel shareIntance] getDataFromUrl:[NSURL URLWithString:kContentUrl] callback:^(BOOL status, id result) {
         if (!status) {
             callback(status, result);
         } else {
-            [self parseData:result callback:callback];
+            [weakSelf parseData:result callback:callback];
         }
     }];
 }

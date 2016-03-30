@@ -15,11 +15,12 @@
 @property (nonatomic, strong) NSMutableDictionary *imageCashe;
 @end
 @implementation NetworkModel
-static NetworkModel *instance = nil;
 +(instancetype)shareIntance {
-    @synchronized(self) {
-        instance = [[self alloc] init];
-    }
+    static NetworkModel *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [NetworkModel new];
+    });
     return instance;
 }
 -(instancetype)init {
@@ -40,8 +41,9 @@ static NetworkModel *instance = nil;
         callback(NO, [NSError errorWithDomain:@"LocalError" code:902 userInfo:nil]);
         return;
     }
+    __weak NetworkModel *weakSelf = self;
     NSURLSessionDataTask *task = [self.session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        [self.tasks removeObjectForKey:url.absoluteString];
+        [weakSelf.tasks removeObjectForKey:url.absoluteString];
         if (error) {
             callback(NO, error);
             return;
@@ -65,8 +67,9 @@ static NetworkModel *instance = nil;
         callback(NO, [NSError errorWithDomain:@"LocalError" code:902 userInfo:nil]);
         return;
     }
+    __weak NetworkModel *weakSelf = self;
     NSURLSessionDownloadTask * task = [self.session downloadTaskWithURL:url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        [self.tasks removeObjectForKey:url.absoluteString];
+        [weakSelf.tasks removeObjectForKey:url.absoluteString];
         if (error) {
             callback(NO, error);
             return ;
@@ -75,7 +78,7 @@ static NetworkModel *instance = nil;
         if (data) {
             NSString *fileName = [NSTemporaryDirectory() stringByAppendingFormat:@"%f.png", [[NSDate new] timeIntervalSince1970]];
             if ([data writeToFile:fileName atomically:YES]) {
-                [self.imageCashe setValue:fileName forKey:url.absoluteString];
+                [weakSelf.imageCashe setValue:fileName forKey:url.absoluteString];
                 callback(YES, fileName);
                 return;
             }

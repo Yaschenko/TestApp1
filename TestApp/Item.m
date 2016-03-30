@@ -33,7 +33,7 @@
     return item;
 }
 +(void)addItemsFromArray:(NSArray *)array callback:(CreateItemsCallback)callback {
-    NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate backgroundContext];
+    __weak NSManagedObjectContext *context = [(AppDelegate *)[UIApplication sharedApplication].delegate backgroundContext];
     [context performBlock:^{
         NSMutableArray *arr = [NSMutableArray new];
         for (NSDictionary *obj in array) {
@@ -44,7 +44,7 @@
             callback([NSArray new]);
             return ;
         }
-        NSManagedObjectContext *mainContext = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
+        __weak NSManagedObjectContext *mainContext = [(AppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
         [mainContext performBlock:^{
             NSMutableArray *result = [NSMutableArray new];
             for (NSManagedObject *obj in arr) {
